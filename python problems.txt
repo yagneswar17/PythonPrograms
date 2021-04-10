@@ -1,0 +1,120 @@
+1) Invert case
+
+s=input()
+n,m=input().split()
+n=int(n)
+m=int(m)
+k=""
+for j in range (len(s)):
+    if(j==n-1):
+        if(s[j].isupper()):
+           k=k+(s[j].lower())
+        else:
+             k=k+(s[j].upper())
+    elif(j==m-1):
+        if(s[j].islower()):
+          k=k+(s[j].upper())
+        else:
+            k=k+(s[j].lower())
+    else:
+        k=k+s[j]
+print(k)
+
+2) Find the odd
+
+s=input()
+for i in range (len(s)):
+    c=0
+    h=0
+    for k in range (i):
+        if(s[i]==s[k]):
+            h+=1
+    if(h==0):
+        for j in range (i+1,len(s)):
+         if(s[i]==s[j]):
+            c+=1
+        if(c%2==0):
+         print(s[i])
+
+3) Simple rotation
+
+s=list(input())
+k=""
+for j in range (len(s)):
+    k=k+s[j]
+print(k)
+for i in range (len(s)-1):
+    k=""
+    s.append(s[0])
+    del s[0]
+    for j in range (len(s)):
+        k=k+s[j]
+    print(k)
+
+4) Marks
+
+t=int(input())
+for i in range (t):
+    s=list(input())
+    a=[]
+    j=0
+    while(j<len(s)):
+        c=1
+        if(s[j]=='1'):
+            for k in range (j+1,len(s)):
+                if(s[k]=='1'):
+                    c+=1
+                else:
+                    break
+            a.append(c)
+            j=j+c-1
+        j+=1
+    if(len(a)==0):
+        print("0")
+    else:
+        print(max(a))
+
+5) String to mattrix
+
+t=int(input())
+for i in range (t):
+    s=list(input())
+    a=[]
+    j=0
+    while(j<len(s)):
+        c=1
+        if(s[j]=='1'):
+            for k in range (j+1,len(s)):
+                if(s[k]=='1'):
+                    c+=1
+                else:
+                    break
+            a.append(c)
+            j=j+c-1
+        j+=1
+    if(len(a)==0):
+        print("0")
+    else:
+        print(max(a))
+
+6) Find position
+
+t=int(input())
+x=[]
+y=[]
+for i in range (t):
+    n,m=input().split()
+    n=int(n)
+    x.append(n)
+    m=int(m)
+    y.append(m)
+n=sum(x)
+m=sum(y)
+if(n>0 and m>0):
+    print("Q1")
+elif(n>0 and m<0):
+    print("Q4")
+elif(n<0 and m>0):
+    print("Q2")
+elif(n<0 and m<0):
+    print("Q3")
